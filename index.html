@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دانشکده علوم قرآنی تهران</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Vazirmatn Font -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Phosphor Icons (for standard SVGs) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#051F20',
+                            base: '#0B3B3C',
+                            light: '#145D5F',
+                            accent: '#FBBF24',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif; background-color: #051F20; color: #E2E8F0; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <header class="bg-brand-base border-b border-brand-light/50 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo & Title -->
+                <div class="flex items-center gap-4">
+                    <img src="Gemini_Generated_Image_8u1oei8u1oei8u1o.jpeg" alt="لوگو دانشکده" class="w-14 h-14 md:w-16 md:h-16 rounded-lg object-contain bg-white">
+                    <div>
+                        <h1 class="text-lg md:text-xl font-bold text-white leading-tight">دانشکده علوم قرآنی تهران</h1>
+                        <p class="text-xs md:text-sm text-teal-200 mt-1">تاسیس ۱۳۶۸ | دانشگاه علوم و معارف قرآن کریم</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#hero" class="text-sm font-medium hover:text-brand-accent transition-colors">صفحه نخست</a>
+                    <a href="#gallery" class="text-sm font-medium hover:text-brand-accent transition-colors">عکس‌های دانشکده</a>
+                    <a href="#offices" class="text-sm font-medium hover:text-brand-accent transition-colors">بخش‌ها و اتاق‌ها</a>
+                    <a href="#faculty" class="text-sm font-medium hover:text-brand-accent transition-colors">اعضای هیئت علمی</a>
+                    <a href="#map" class="text-sm font-medium hover:text-brand-accent transition-colors">نقشه طبقات</a>
+                    <a href="#basij" class="bg-brand-accent text-slate-900 px-5 py-2.5 rounded-xl font-bold hover:bg-yellow-400 transition-colors shadow-md flex items-center gap-2">
+                        <i class="ph-bold ph-user-plus text-lg"></i>
+                        ثبت‌نام بسیج
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="py-12 md:py-20 relative overflow-hidden">
+            <div class="container mx-auto px-4 text-center z-10 relative">
+                <p class="text-brand-accent font-semibold mb-4 text-lg">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-4 leading-normal">
+                    به دانشکده علوم قرآنی تهران<br>خوش آمدید
+                </h2>
+                
+                <p class="text-teal-100/70 text-sm md:text-base max-w-xl mx-auto mb-1">
+                    تهیه شده توسط بسیج دانشجویی دانشکده علوم قرآنی تهران
+                </p>
+
+                <!-- Quick Access Buttons -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto mt-12">
+                    <a href="#gallery" class="bg-brand-light/40 border border-brand-light hover:bg-brand-light/60 transition-all rounded-2xl p-4 flex flex-col items-center justify-center gap-3 group backdrop-blur-sm">
+                        <div class="bg-brand-base p-3 rounded-full text-teal-300 group-hover:scale-110 transition-transform">
+                            <i class="ph ph-image text-2xl"></i>
+                        </div>
+                        <span class="font-bold text-white text-sm md:text-base">عکس‌های دانشکده</span>
+                    </a>
+                    
+                    <a href="#offices" class="bg-brand-light/40 border border-brand-light hover:bg-brand-light/60 transition-all rounded-2xl p-4 flex flex-col items-center justify-center gap-3 group backdrop-blur-sm">
+                        <div class="bg-brand-base p-3 rounded-full text-teal-300 group-hover:scale-110 transition-transform">
+                            <i class="ph ph-buildings text-2xl"></i>
+                        </div>
+                        <span class="font-bold text-white text-sm md:text-base">بخش‌ها و اتاق‌ها</span>
+                    </a>
+                    
+                    <a href="#basij" class="bg-brand-light/40 border border-brand-light hover:bg-brand-light/60 transition-all rounded-2xl p-4 flex flex-col items-center justify-center gap-3 group backdrop-blur-sm">
+                        <div class="bg-brand-base p-3 rounded-full text-teal-300 group-hover:scale-110 transition-transform">
+                            <i class="ph ph-shield-check text-2xl"></i>
+                        </div>
+                        <span class="font-bold text-white text-sm md:text-base">ثبت‌نام بسیج</span>
+                    </a>
+
+                    <a href="#map" class="bg-brand-light/40 border border-brand-light hover:bg-brand-light/60 transition-all rounded-2xl p-4 flex flex-col items-center justify-center gap-3 group backdrop-blur-sm">
+                        <div class="bg-brand-base p-3 rounded-full text-teal-300 group-hover:scale-110 transition-transform">
+                            <i class="ph ph-map-trifold text-2xl"></i>
+                        </div>
+                        <span class="font-bold text-white text-sm md:text-base">نقشه طبقات</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-12 bg-brand-base/30">
+            <div class="container mx-auto px-4 max-w-5xl">
+                
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-light bg-black aspect-[4/3]">
+                    
+                    <!-- Slider Container (Fading Slides) -->
+                    <div id="slider-container" class="w-full h-full relative">
+                        <!-- Slide 1 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100">
+                            <img src="1794058140132.jpg" alt="سردر دانشکده" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="1794059299623.jpg" alt="راهرو ورود به در حیاط" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="20261107_133115.jpg" alt="حیاط و فضای سبز" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="1794058756433.jpg" alt="سردر ورودی" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="1794059041657.jpg" alt="راهرو دفاتر اداری" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="file_00000000cba081f5b6b575d63a72974f.png" alt="سالن اجتماعات" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 7 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="1794059546476.jpg" alt="راهرو کلاس‌ها" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 8 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="1794058633930.jpg" alt="کلاس درس" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 9 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="1794059964972.jpg" alt="سالن جلسات" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 10 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="20261107_133608.jpg" alt="کتابخانه ۱" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 11 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="20261107_133713.jpg" alt="کتابخانه ۲" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Slide 12 -->
+                        <div class="gallery-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+                            <img src="20261107_133615.jpg" alt="کتابخانه ۳" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Left / Right Controls -->
+                    <button onclick="prevSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center backdrop-blur transition-all z-20">
+                        <i class="ph-bold ph-caret-right text-xl"></i>
+                    </button>
+                    <button onclick="nextSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center backdrop-blur transition-all z-20">
+                        <i class="ph-bold ph-caret-left text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Slider Navigation Tabs -->
+                <div class="flex gap-2 overflow-x-auto mt-4 pb-2 no-scrollbar" id="gallery-tabs">
+                    <button onclick="goToSlide(0)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-teal-600 text-white">۱. سردر دانشکده</button>
+                    <button onclick="goToSlide(1)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۲. راهرو حیاط</button>
+                    <button onclick="goToSlide(2)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۳. حیاط و فضای سبز</button>
+                    <button onclick="goToSlide(3)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۴. سردر ورودی</button>
+                    <button onclick="goToSlide(4)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۵. راهرو دفاتر اداری</button>
+                    <button onclick="goToSlide(5)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۶. سالن اجتماعات</button>
+                    <button onclick="goToSlide(6)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۷. راهرو کلاس‌ها</button>
+                    <button onclick="goToSlide(7)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۸. کلاس درس</button>
+                    <button onclick="goToSlide(8)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۹. سالن جلسات</button>
+                    <button onclick="goToSlide(9)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۱۰. کتابخانه (تصویر ۱)</button>
+                    <button onclick="goToSlide(10)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۱۱. کتابخانه (تصویر ۲)</button>
+                    <button onclick="goToSlide(11)" class="gallery-tab whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-brand-light/30 text-teal-200 hover:bg-brand-light">۱۲. کتابخانه (تصویر ۳)</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offices Section -->
+        <section id="offices" class="py-16">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-black text-white">شماره تماس و موقعیت دفاتر مسئولان دانشکده</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    
+                    <!-- 1. ریاست (کارت بزرگ) -->
+                    <div class="bg-brand-light/30 border border-teal-500/50 rounded-2xl p-6 hover:bg-brand-light/50 transition-colors md:col-span-2 lg:col-span-3">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-black text-white">ریاست دانشکده</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm text-teal-100 mb-6">
+                            <div>
+                                <p class="mb-2"><strong class="text-brand-accent">نام مسئول:</strong> [نام ریاست دانشکده]</p>
+                                <p class="mb-2"><strong class="text-brand-accent">مکان:</strong> [مکان دفتر ریاست]</p>
+                                <p class="mb-2"><strong class="text-brand-accent">ساعت کاری:</strong> [ساعات حضور]</p>
+                            </div>
+                            <div>
+                                <p class="mb-2"><strong class="text-brand-accent">آیدی ایتا:</strong> [آیدی ایتا]</p>
+                                <p class="mb-2"><strong class="text-brand-accent">شماره تماس داخلی:</strong> [شماره داخلی]</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. معاونت آموزشی -->
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-5 hover:bg-brand-light/30 transition-colors">
+                        <h3 class="text-lg font-bold text-white mb-4">معاونت آموزشی</h3>
+                        <div class="space-y-2 text-sm text-teal-100">
+                            <p><strong class="text-white">نام مسئول:</strong> [نام مسئول]</p>
+                            <p><strong class="text-white">مکان:</strong> [مکان دفتر]</p>
+                            <p><strong class="text-white">ساعت کاری:</strong> [ساعت کاری]</p>
+                            <p><strong class="text-white">شماره تماس داخلی:</strong> [داخلی]</p>
+                            <p class="text-brand-accent"><strong class="text-white">آیدی ایتا:</strong> [آیدی ایتا]</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. ریاست گروه آموزشی دانشکده -->
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-5 hover:bg-brand-light/30 transition-colors">
+                        <h3 class="text-lg font-bold text-white mb-4">ریاست گروه آموزشی دانشکده</h3>
+                        <div class="space-y-2 text-sm text-teal-100">
+                            <p><strong class="text-white">نام مسئول:</strong> [نام مسئول]</p>
+                            <p><strong class="text-white">مکان:</strong> [مکان دفتر]</p>
+                            <p><strong class="text-white">ساعت کاری:</strong> [ساعت کاری]</p>
+                            <p><strong class="text-white">شماره تماس داخلی:</strong> [داخلی]</p>
+                            <p class="text-brand-accent"><strong class="text-white">آیدی ایتا:</strong> [آیدی ایتا]</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. معاونت تحصیلات تکمیلی -->
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-5 hover:bg-brand-light/30 transition-colors">
+                        <h3 class="text-lg font-bold text-white mb-4">معاونت تحصیلات تکمیلی</h3>
+                        <div class="space-y-2 text-sm text-teal-100">
+                            <p><strong class="text-white">نام مسئول:</strong> [نام مسئول]</p>
+                            <p><strong class="text-white">مکان:</strong> [مکان دفتر]</p>
+                            <p><strong class="text-white">ساعت کاری:</strong> [ساعت کاری]</p>
+                            <p><strong class="text-white">شماره تماس داخلی:</strong> [داخلی]</p>
+                            <p class="text-brand-accent"><strong class="text-white">آیدی ایتا:</strong> [آیدی ایتا]</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. امور دانشجویی -->
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-5 hover:bg-brand-light/30 transition-colors">
+                        <h3 class="text-lg font-bold text-white mb-4">امور دانشجویی</h3>
+                        <div class="space-y-2 text-sm text-teal-100">
+                            <p><strong class="text-white">نام مسئول:</strong> [نام مسئول]</p>
+                            <p><strong class="text-white">مکان:</strong> [مکان دفتر]</p>
+                            <p><strong class="text-white">ساعت کاری:</strong> [ساعت کاری]</p>
+                            <p><strong class="text-white">شماره تماس داخلی:</strong> [داخلی]</p>
+                            <p class="text-brand-accent"><strong class="text-white">آیدی ایتا:</strong> [آیدی ایتا]</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. امور فرهنگی -->
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-5 hover:bg-brand-light/30 transition-colors">
+                        <h3 class="text-lg font-bold text-white mb-4">امور فرهنگی</h3>
+                        <div class="space-y-2 text-sm text-teal-100">
+                            <p><strong class="text-white">نام مسئول:</strong> [نام مسئول]</p>
+                            <p><strong class="text-white">مکان:</strong> [مکان دفتر]</p>
+                            <p><strong class="text-white">ساعت کاری:</strong> [ساعت کاری]</p>
+                            <p><strong class="text-white">شماره تماس داخلی:</strong> [داخلی]</p>
+                            <p class="text-brand-accent"><strong class="text-white">آیدی ایتا:</strong> [آیدی ایتا]</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. امور مالی و حسابداری -->
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-5 hover:bg-brand-light/30 transition-colors">
+                        <h3 class="text-lg font-bold text-white mb-4">امور مالی و حسابداری</h3>
+                        <div class="space-y-2 text-sm text-teal-100">
+                            <p><strong class="text-white">نام مسئول:</strong> [نام مسئول]</p>
+                            <p><strong class="text-white">مکان:</strong> [مکان دفتر]</p>
+                            <p><strong class="text-white">ساعت کاری:</strong> [ساعت کاری]</p>
+                            <p><strong class="text-white">شماره تماس داخلی:</strong> [داخلی]</p>
+                            <p class="text-brand-accent"><strong class="text-white">آیدی ایتا:</strong> [آیدی ایتا]</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. حراست دانشکده -->
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-5 hover:bg-brand-light/30 transition-colors">
+                        <h3 class="text-lg font-bold text-white mb-4">حراست دانشکده</h3>
+                        <div class="space-y-2 text-sm text-teal-100">
+                            <p><strong class="text-white">نام مسئول:</strong> [نام مسئول]</p>
+                            <p><strong class="text-white">مکان:</strong> [مکان دفتر]</p>
+                            <p><strong class="text-white">ساعت کاری:</strong> [ساعت کاری]</p>
+                            <p><strong class="text-white">شماره تماس داخلی:</strong> [داخلی]</p>
+                            <p class="text-brand-accent"><strong class="text-white">آیدی ایتا:</strong> [آیدی ایتا]</p>
+                        </div>
+                    </div>
+
+                    <!-- 9. معاونت IT دانشکده -->
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-5 hover:bg-brand-light/30 transition-colors">
+                        <h3 class="text-lg font-bold text-white mb-4">معاونت IT دانشکده</h3>
+                        <div class="space-y-2 text-sm text-teal-100">
+                            <p><strong class="text-white">نام مسئول:</strong> [نام مسئول]</p>
+                            <p><strong class="text-white">مکان:</strong> [مکان دفتر]</p>
+                            <p><strong class="text-white">ساعت کاری:</strong> [ساعت کاری]</p>
+                            <p><strong class="text-white">شماره تماس داخلی:</strong> [داخلی]</p>
+                            <p class="text-brand-accent"><strong class="text-white">آیدی ایتا:</strong> [آیدی ایتا]</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Faculty Section (6 Members) -->
+        <section id="faculty" class="py-16 bg-brand-base/30">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-black text-white">اساتید و اعضای هیئت علمی دانشکده</h2>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Faculty 1 to 6 -->
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform">
+                        <div class="w-20 h-20 bg-brand-base rounded-full mx-auto mb-4 flex items-center justify-center text-teal-400">
+                            <i class="ph ph-user text-3xl"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-1">[نام استاد ۱]</h4>
+                        <p class="text-xs text-teal-200">[رتبه علمی و گروه]</p>
+                    </div>
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform">
+                        <div class="w-20 h-20 bg-brand-base rounded-full mx-auto mb-4 flex items-center justify-center text-teal-400">
+                            <i class="ph ph-user text-3xl"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-1">[نام استاد ۲]</h4>
+                        <p class="text-xs text-teal-200">[رتبه علمی و گروه]</p>
+                    </div>
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform">
+                        <div class="w-20 h-20 bg-brand-base rounded-full mx-auto mb-4 flex items-center justify-center text-teal-400">
+                            <i class="ph ph-user text-3xl"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-1">[نام استاد ۳]</h4>
+                        <p class="text-xs text-teal-200">[رتبه علمی و گروه]</p>
+                    </div>
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform">
+                        <div class="w-20 h-20 bg-brand-base rounded-full mx-auto mb-4 flex items-center justify-center text-teal-400">
+                            <i class="ph ph-user text-3xl"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-1">[نام استاد ۴]</h4>
+                        <p class="text-xs text-teal-200">[رتبه علمی و گروه]</p>
+                    </div>
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform">
+                        <div class="w-20 h-20 bg-brand-base rounded-full mx-auto mb-4 flex items-center justify-center text-teal-400">
+                            <i class="ph ph-user text-3xl"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-1">[نام استاد ۵]</h4>
+                        <p class="text-xs text-teal-200">[رتبه علمی و گروه]</p>
+                    </div>
+                    <div class="bg-brand-light/20 border border-brand-light rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform">
+                        <div class="w-20 h-20 bg-brand-base rounded-full mx-auto mb-4 flex items-center justify-center text-teal-400">
+                            <i class="ph ph-user text-3xl"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-1">[نام استاد ۶]</h4>
+                        <p class="text-xs text-teal-200">[رتبه علمی و گروه]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basij Registration Section -->
+        <section id="basij" class="py-16">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-black text-white">ثبت‌نام بسیج دانشکده علوم قرآنی تهران</h2>
+                </div>
+
+                <div class="bg-brand-light/20 border border-brand-light rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+                    <form id="basij-form" onsubmit="submitBasijForm(event)">
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <!-- Row 1 -->
+                            <div>
+                                <label class="block text-sm font-bold text-teal-100 mb-2">نام و نام خانوادگی *</label>
+                                <input type="text" id="reg-name" required placeholder="مثال: علی احمدی" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-teal-100 mb-2">جنسیت متقاضی *</label>
+                                <select id="reg-gender" required class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent appearance-none">
+                                    <option value="" disabled selected>انتخاب کنید...</option>
+                                    <option value="male">برادران (آقایان)</option>
+                                    <option value="female">خواهران (خانم‌ها)</option>
+                                </select>
+                            </div>
+
+                            <!-- Row 2 -->
+                            <div>
+                                <label class="block text-sm font-bold text-teal-100 mb-2">مقطع و سال ورود *</label>
+                                <select id="reg-degree" required class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent appearance-none">
+                                    <option value="" disabled selected>انتخاب مقطع تحصیلی...</option>
+                                    <optgroup label="مقطع کارشناسی">
+                                        <option value="bs1402">کارشناسی علوم قرآن و حدیث (ورودی ۱۴۰۲)</option>
+                                        <option value="bs1403">کارشناسی علوم قرآن و حدیث (ورودی ۱۴۰۳)</option>
+                                        <option value="bs1404">کارشناسی علوم قرآن و حدیث (ورودی ۱۴۰۴)</option>
+                                        <option value="bs1405">کارشناسی علوم قرآن و حدیث (ورودی جدید ۱۴۰۵)</option>
+                                    </optgroup>
+                                    <optgroup label="مقطع کارشناسی ارشد">
+                                        <option value="ms1403">کارشناسی ارشد علوم قرآن و حدیث (ورودی ۱۴۰۳)</option>
+                                        <option value="ms1404">کارشناسی ارشد علوم قرآن و حدیث (ورودی ۱۴۰۴)</option>
+                                        <option value="ms1405">کارشناسی ارشد علوم قرآن و حدیث (ورودی جدید ۱۴۰۵)</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-teal-100 mb-2">شماره دانشجویی *</label>
+                                <input type="number" id="reg-student-id" required placeholder="مثال: ۴۰۲۰۱۲۳۴۵۶" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent">
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div>
+                                <label class="block text-sm font-bold text-teal-100 mb-2">کد ملی *</label>
+                                <input type="number" id="reg-national-id" required placeholder="مثال: ۰۰۱۲۳۴۵۶۷۸" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-teal-100 mb-2">شماره همراه فعال در ایتا *</label>
+                                <input type="tel" id="reg-phone" required placeholder="۰۹۱۲۳۴۵۶۷۸۹" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent text-left" dir="ltr">
+                            </div>
+                        </div>
+
+                        <!-- Checkboxes -->
+                        <div class="mb-6 border border-brand-light rounded-xl p-5 bg-brand-base/50">
+                            <label class="block text-sm font-bold text-teal-100 mb-4">زمینه‌های علاقه‌مندی به فعالیت در پایگاه:</label>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="checkbox" value="قرآنی" class="reg-interests w-4 h-4 rounded bg-brand-base border-brand-light text-brand-accent focus:ring-brand-accent">
+                                    <span class="text-sm text-teal-200 group-hover:text-white">قرآنی، تلاوت و حفظ</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="checkbox" value="علمی" class="reg-interests w-4 h-4 rounded bg-brand-base border-brand-light text-brand-accent focus:ring-brand-accent">
+                                    <span class="text-sm text-teal-200 group-hover:text-white">علمی و پژوهشی</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="checkbox" value="فرهنگی" class="reg-interests w-4 h-4 rounded bg-brand-base border-brand-light text-brand-accent focus:ring-brand-accent">
+                                    <span class="text-sm text-teal-200 group-hover:text-white">فرهنگی و مراسمات</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="checkbox" value="مجازی" class="reg-interests w-4 h-4 rounded bg-brand-base border-brand-light text-brand-accent focus:ring-brand-accent">
+                                    <span class="text-sm text-teal-200 group-hover:text-white">فضای مجازی و رسانه</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="checkbox" value="اردویی" class="reg-interests w-4 h-4 rounded bg-brand-base border-brand-light text-brand-accent focus:ring-brand-accent">
+                                    <span class="text-sm text-teal-200 group-hover:text-white">اردویی و جهادی</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="checkbox" value="ورزشی" class="reg-interests w-4 h-4 rounded bg-brand-base border-brand-light text-brand-accent focus:ring-brand-accent">
+                                    <span class="text-sm text-teal-200 group-hover:text-white">تربیت بدنی و ورزش</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="mb-8">
+                            <label class="block text-sm font-bold text-teal-100 mb-2">توضیحات، سوابق یا مهارت‌های خاص (اختیاری):</label>
+                            <textarea id="reg-desc" rows="3" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent" placeholder="توضیحات، مهارت‌ها یا سوابق..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-accent hover:bg-yellow-400 text-slate-900 font-bold text-lg py-4 rounded-xl shadow-lg transition-colors flex justify-center items-center gap-2">
+                            <i class="ph-bold ph-paper-plane-right"></i>
+                            تایید و ارسال مشخصات به مسئول منابع انسانی پایگاه
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section (5 Placeholders) -->
+        <section id="map" class="py-16 bg-brand-base/30">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-black text-white">نقشه طبقات و راهنمای محیطی</h2>
+                    <p class="text-teal-200 mt-2 text-sm">موقعیت کلاس‌ها، اتاق‌ها و امکانات دانشکده</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Map 1 -->
+                    <div class="border-2 border-dashed border-teal-500/30 rounded-3xl p-6 flex flex-col items-center justify-center min-h-[250px] bg-brand-light/10 text-teal-300">
+                        <i class="ph ph-map-trifold text-5xl mb-3 opacity-50"></i>
+                        <span class="font-bold">نقشه شماره ۱ (جایگاه تصویر)</span>
+                        <img src="map-placeholder-1.jpg" alt="" class="hidden">
+                    </div>
+                    <!-- Map 2 -->
+                    <div class="border-2 border-dashed border-teal-500/30 rounded-3xl p-6 flex flex-col items-center justify-center min-h-[250px] bg-brand-light/10 text-teal-300">
+                        <i class="ph ph-map-trifold text-5xl mb-3 opacity-50"></i>
+                        <span class="font-bold">نقشه شماره ۲ (جایگاه تصویر)</span>
+                        <img src="map-placeholder-2.jpg" alt="" class="hidden">
+                    </div>
+                    <!-- Map 3 -->
+                    <div class="border-2 border-dashed border-teal-500/30 rounded-3xl p-6 flex flex-col items-center justify-center min-h-[250px] bg-brand-light/10 text-teal-300">
+                        <i class="ph ph-map-trifold text-5xl mb-3 opacity-50"></i>
+                        <span class="font-bold">نقشه شماره ۳ (جایگاه تصویر)</span>
+                        <img src="map-placeholder-3.jpg" alt="" class="hidden">
+                    </div>
+                    <!-- Map 4 -->
+                    <div class="border-2 border-dashed border-teal-500/30 rounded-3xl p-6 flex flex-col items-center justify-center min-h-[250px] bg-brand-light/10 text-teal-300">
+                        <i class="ph ph-map-trifold text-5xl mb-3 opacity-50"></i>
+                        <span class="font-bold">نقشه شماره ۴ (جایگاه تصویر)</span>
+                        <img src="map-placeholder-4.jpg" alt="" class="hidden">
+                    </div>
+                    <!-- Map 5 (Full Width) -->
+                    <div class="md:col-span-2 border-2 border-dashed border-teal-500/30 rounded-3xl p-6 flex flex-col items-center justify-center min-h-[300px] bg-brand-light/10 text-teal-300">
+                        <i class="ph ph-map-trifold text-5xl mb-3 opacity-50"></i>
+                        <span class="font-bold">نقشه شماره ۵ (جایگاه تصویر)</span>
+                        <img src="map-placeholder-5.jpg" alt="" class="hidden">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="bg-brand-base border-t border-brand-light/50 py-10 mt-10">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Address -->
+                <div class="flex flex-col items-center text-center gap-3">
+                    <div class="w-12 h-12 bg-brand-light/30 rounded-full flex items-center justify-center text-brand-accent">
+                        <i class="ph-fill ph-map-pin text-2xl"></i>
+                    </div>
+                    <h5 class="text-white font-bold">آدرس</h5>
+                    <p class="text-teal-200 text-sm leading-relaxed">
+                        خیابان حافظ(بعد از خیابان جمهوری)، خیابان سرهنگ سخایی، بعد از خیابان سی تیر، دانشکده علوم قرآنی تهران
+                    </p>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex flex-col items-center text-center gap-3">
+                    <div class="w-12 h-12 bg-brand-light/30 rounded-full flex items-center justify-center text-brand-accent">
+                        <i class="ph-fill ph-phone text-2xl"></i>
+                    </div>
+                    <h5 class="text-white font-bold">تلفن</h5>
+                    <p class="text-teal-200 text-sm leading-relaxed" dir="ltr">
+                        021-66719756 <br> 021-66702512
+                    </p>
+                </div>
+
+                <!-- Postal Code -->
+                <div class="flex flex-col items-center text-center gap-3">
+                    <div class="w-12 h-12 bg-brand-light/30 rounded-full flex items-center justify-center text-brand-accent">
+                        <i class="ph-fill ph-mailbox text-2xl"></i>
+                    </div>
+                    <h5 class="text-white font-bold">صندوق پستی</h5>
+                    <p class="text-teal-200 text-sm leading-relaxed" dir="ltr">
+                        1135813511
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // --- Gallery Slider Logic ---
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const tabs = document.querySelectorAll('.gallery-tab');
+
+        function updateSliderUI(index) {
+            // Update Slides (Fade effect)
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.add('opacity-0', 'pointer-events-none');
+                    slide.classList.remove('opacity-100');
+                }
+            });
+
+            // Update Tabs
+            tabs.forEach((tab, i) => {
+                if(i === index) {
+                    tab.classList.add('bg-teal-600', 'text-white');
+                    tab.classList.remove('bg-brand-light/30', 'text-teal-200');
+                } else {
+                    tab.classList.remove('bg-teal-600', 'text-white');
+                    tab.classList.add('bg-brand-light/30', 'text-teal-200');
+                }
+            });
+
+            // Scroll tab into view if needed
+            if(tabs[index]) {
+                tabs[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+            
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % slides.length;
+            updateSliderUI(next);
+        }
+
+        function prevSlide() {
+            let prev = (currentSlide - 1 + slides.length) % slides.length;
+            updateSliderUI(prev);
+        }
+
+        function goToSlide(index) {
+            updateSliderUI(index);
+        }
+
+        // --- Form Submission Logic (Eitaa Integration) ---
+        function submitBasijForm(e) {
+            e.preventDefault();
+
+            // IDs supplied by user (placeholder for now)
+            const eitaaAdminAgha = "admin_agha"; // شماره یا آیدی منابع انسانی آقایان
+            const eitaaAdminKhanom = "admin_khanom"; // شماره یا آیدی منابع انسانی خانم‌ها
+
+            const name = document.getElementById('reg-name').value;
+            const gender = document.getElementById('reg-gender').value;
+            const degree = document.getElementById('reg-degree').options[document.getElementById('reg-degree').selectedIndex].text;
+            const studentId = document.getElementById('reg-student-id').value;
+            const nationalId = document.getElementById('reg-national-id').value;
+            const phone = document.getElementById('reg-phone').value;
+            const desc = document.getElementById('reg-desc').value;
+
+            // Get selected interests
+            const interests = [];
+            document.querySelectorAll('.reg-interests:checked').forEach(cb => {
+                interests.push(cb.nextElementSibling.innerText);
+            });
+
+            // Format message
+            const message = `فرم ثبت‌نام بسیج\n\nنام و نام خانوادگی: ${name}\nجنسیت: ${gender === 'male' ? 'آقا' : 'خانم'}\nمقطع و سال ورود: ${degree}\nشماره دانشجویی: ${studentId}\nکد ملی: ${nationalId}\nشماره همراه ایتا: ${phone}\nعلاقه‌مندی‌ها: ${interests.length > 0 ? interests.join('، ') : 'ندارد'}\nتوضیحات: ${desc || 'ندارد'}`;
+
+            // Determine target based on gender
+            const targetEitaaId = gender === 'male' ? eitaaAdminAgha : eitaaAdminKhanom;
+
+            // Copy to clipboard and redirect
+            navigator.clipboard.writeText(message).then(() => {
+                alert('مشخصات شما در حافظه (کلیپ‌بورد) کپی شد.\nپس از باز شدن پیام‌رسان ایتا، متن را در صفحه چت مسئول مربوطه جایگذاری (Paste) و ارسال کنید.');
+                window.open(`https://eitaa.com/${targetEitaaId}`, '_blank');
+            }).catch(err => {
+                // Fallback if clipboard fails
+                window.open(`https://eitaa.com/${targetEitaaId}`, '_blank');
+            });
+        }
+    </script>
+</body>
+</html>
