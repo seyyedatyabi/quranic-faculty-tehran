@@ -1,0 +1,172 @@
+/* Mobile navigation drawer — Faculty of Qur'anic Sciences Tehran */
+.mobile-menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(45, 128, 126, .65);
+    border-radius: 12px;
+    background: rgba(20, 93, 95, .35);
+    color: #fbbf24;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease;
+}
+.mobile-menu-toggle:hover {
+    background: rgba(20, 93, 95, .7);
+    border-color: #fbbf24;
+}
+.mobile-menu-overlay[hidden] { display: none; }
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: rgba(0, 0, 0, .62);
+    opacity: 0;
+    transition: opacity .28s ease;
+    backdrop-filter: blur(3px);
+}
+.mobile-menu-overlay.is-visible { opacity: 1; }
+
+.mobile-menu-drawer {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    width: min( min(86vw, 360px), 360px );
+    height: 100dvh;
+    padding: 22px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(20, 93, 95, .42), transparent 42%),
+        #071f20;
+    border-left: 1px solid rgba(45, 128, 126, .55);
+    box-shadow: -18px 0 55px rgba(0, 0, 0, .35);
+    transform: translateX(105%);
+    visibility: hidden;
+    transition: transform .3s cubic-bezier(.2,.75,.25,1), visibility .3s;
+    overflow-y: auto;
+}
+.mobile-menu-drawer.is-open {
+    transform: translateX(0);
+    visibility: visible;
+}
+.mobile-menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(45, 128, 126, .35);
+}
+.mobile-menu-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+}
+.mobile-menu-brand-icon {
+    width: 43px;
+    height: 43px;
+    flex: 0 0 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(20, 93, 95, .45);
+    color: #fbbf24;
+    font-size: 23px;
+}
+.mobile-menu-brand strong {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.7;
+}
+.mobile-menu-brand small {
+    display: block;
+    margin-top: 2px;
+    color: #9bd4cf;
+    font-size: 11px;
+}
+.mobile-menu-close {
+    width: 39px;
+    height: 39px;
+    flex: 0 0 39px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(45, 128, 126, .5);
+    border-radius: 11px;
+    background: rgba(20, 93, 95, .28);
+    color: #d8eeee;
+    font-size: 22px;
+    cursor: pointer;
+}
+.mobile-menu-caption {
+    margin: 23px 4px 12px;
+    color: #83bdb8;
+    font-size: 12px;
+}
+.mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.mobile-menu-links a {
+    min-height: 51px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 13px;
+    border: 1px solid transparent;
+    border-radius: 13px;
+    color: #e2eeee;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.mobile-menu-links a > i:first-child {
+    width: 23px;
+    color: #fbbf24;
+    font-size: 20px;
+    text-align: center;
+}
+.mobile-menu-links a:hover,
+.mobile-menu-links a:focus-visible {
+    outline: none;
+    background: rgba(20, 93, 95, .35);
+    border-color: rgba(45, 128, 126, .55);
+    color: #fff;
+}
+.mobile-menu-arrow {
+    margin-right: auto;
+    color: #6fa9a4;
+    font-size: 15px;
+}
+.mobile-menu-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: auto;
+    padding: 18px 4px 2px;
+    color: #6faaa5;
+    font-size: 10px;
+    border-top: 1px solid rgba(45, 128, 126, .25);
+}
+body.mobile-menu-open { overflow: hidden; }
+
+@media (max-width: 1023px) {
+    .mobile-menu-toggle { display: inline-flex; }
+}
+@media (min-width: 1024px) {
+    .mobile-menu-overlay,
+    .mobile-menu-drawer { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .mobile-menu-overlay,
+    .mobile-menu-drawer,
+    .mobile-menu-toggle,
+    .mobile-menu-links a { transition: none; }
+}
