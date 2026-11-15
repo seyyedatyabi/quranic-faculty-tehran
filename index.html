@@ -12,6 +12,7 @@
     
     <!-- Vazirmatn Font -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="mobile-menu.css">
     
     <!-- Phosphor Icons (for standard SVGs) -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -75,9 +76,59 @@
                     <a href="#faculty" class="text-sm font-medium hover:text-brand-accent transition-colors">اعضای هیئت علمی</a>
                     <a href="#basij" class="text-sm font-medium hover:text-brand-accent transition-colors">ثبت‌نام بسیج</a>
                 </nav>
+                <button
+    id="mobile-menu-open"
+    class="mobile-menu-toggle"
+    type="button"
+    aria-label="باز کردن منو"
+    aria-controls="mobile-menu"
+    aria-expanded="false">
+    <i class="ph ph-list" aria-hidden="true"></i>
+</button>
             </div>
         </div>
     </header>
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay" hidden></div>
+
+<aside
+    id="mobile-menu"
+    class="mobile-menu-drawer"
+    aria-label="منوی اصلی"
+    aria-hidden="true"
+    inert>
+
+    <div class="mobile-menu-top">
+        <div class="mobile-menu-brand">
+            <span class="mobile-menu-brand-icon">
+                <i class="ph ph-book-open-text" aria-hidden="true"></i>
+            </span>
+            <div>
+                <strong>دانشکده علوم قرآنی تهران</strong>
+                <small>راهنمای دانشکده</small>
+            </div>
+        </div>
+
+        <button id="mobile-menu-close" class="mobile-menu-close" type="button" aria-label="بستن منو">
+            <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <p class="mobile-menu-caption">دسترسی سریع به بخش‌های سایت</p>
+
+    <nav class="mobile-menu-links">
+        <a href="#hero"><i class="ph ph-house"></i><span>صفحه نخست</span><i class="ph ph-caret-left mobile-menu-arrow"></i></a>
+        <a href="#gallery"><i class="ph ph-images"></i><span>عکس‌های دانشکده</span><i class="ph ph-caret-left mobile-menu-arrow"></i></a>
+        <a href="#offices"><i class="ph ph-buildings"></i><span>بخش‌ها و اتاق‌ها</span><i class="ph ph-caret-left mobile-menu-arrow"></i></a>
+        <a href="#faculty"><i class="ph ph-chalkboard-teacher"></i><span>اعضای هیئت علمی</span><i class="ph ph-caret-left mobile-menu-arrow"></i></a>
+        <a href="#basij"><i class="ph ph-shield-check"></i><span>ثبت‌نام بسیج</span><i class="ph ph-caret-left mobile-menu-arrow"></i></a>
+        <a href="#map"><i class="ph ph-map-trifold"></i><span>نقشه طبقات</span><i class="ph ph-caret-left mobile-menu-arrow"></i></a>
+    </nav>
+
+    <div class="mobile-menu-footer">
+        <span>دانشگاه علوم و معارف قرآن کریم</span>
+        <span>تأسیس ۱۳۶۸</span>
+    </div>
+</aside>
 
     <!-- Main Content -->
     <main class="flex-grow">
@@ -744,5 +795,7 @@
             });
         }
     </script>
+    
+    <script src="mobile-menu.js"></script>
 </body>
 </html>
