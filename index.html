@@ -518,11 +518,17 @@
             function requestImage(img, priority = 50) {
                 if (!img) return;
                 const state = imageState(img);
-                if (state.status === 'loaded' || state.status === 'loading' || state.status === 'error') return;
-                if (state.status === 'queued') {
-                    state.priority = Math.min(state.priority, priority);
-                    if (!queue.includes(img)) queue.push(img);
+                if (state.status === 'loaded' || state.status === 'error') return;
+
+                // A currently viewed image gets absolute priority. If its request
+                // has already started, raise the browser's fetch priority as well.
+                state.priority = Math.min(state.priority, priority);
+                if (state.status === 'loading') {
+                    if (priority <= -100) img.fetchPriority = 'high';
+                    return;
                 }
+
+                if (state.status === 'queued' && !queue.includes(img)) queue.push(img);
                 pump();
             }
 
@@ -630,6 +636,15 @@
             }
 
             window.addEventListener('scroll', onScroll, { passive: true });
+
+            // Absolute top priority: when the pointer moves onto an image,
+            // load that image before continuing the regular priority queue.
+            // This delegated listener also covers images whose src is assigned later.
+            document.addEventListener('pointerover', event => {
+                const img = event.target.closest && event.target.closest('img[data-image-group]');
+                if (img) requestImage(img, -100);
+            }, { passive: true });
+
             document.addEventListener('click', event => {
                 if (!event.target.closest('#gallery')) markGeneralInteraction();
             }, true);
