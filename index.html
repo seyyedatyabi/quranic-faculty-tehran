@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دانشکده علوم قرآنی تهران</title>
-    <meta name="description" content="پورتال راهنمای مراجعین، دانشجویان و ثبت‌نام بسیج دانشکده علوم قرآنی تهران. شامل نقشه طبقات، راه‌های ارتباطی و اطلاعات اساتید.">
+    <title>دانشکده علوم قرآنی تهران | پورتال راهنما و معرفی فضا و امکانات</title>
+    <meta name="description" content="پورتال راهنمای دانشکده علوم قرآنی تهران؛ دسترسی به اطلاعات اعضای هیئت علمی، بخش‌ها و دفاتر، تصاویر، نقشه طبقات و فرم ثبت‌نام بسیج دانشجویی.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:site_name" content="دانشکده علوم قرآنی تهران">
+    <meta property="og:title" content="دانشکده علوم قرآنی تهران | پورتال راهنما و معرفی فضا و امکانات">
+    <meta property="og:description" content="پورتال راهنمای دانشکده علوم قرآنی تهران؛ دسترسی به اطلاعات اعضای هیئت علمی، بخش‌ها و دفاتر، تصاویر، نقشه طبقات و فرم ثبت‌نام بسیج دانشجویی.">
+    <meta property="og:image" content="https://seyyedatyabi.github.io/quranic-faculty-tehran/og-image.jpg">
+    <meta property="og:image:alt" content="تصویر معرفی دانشکده علوم قرآنی تهران">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="دانشکده علوم قرآنی تهران | پورتال راهنما و معرفی فضا و امکانات">
+    <meta name="twitter:description" content="پورتال راهنمای دانشکده علوم قرآنی تهران؛ دسترسی به اطلاعات اعضای هیئت علمی، بخش‌ها و دفاتر، تصاویر، نقشه طبقات و فرم ثبت‌نام بسیج دانشجویی.">
+    <meta name="twitter:image" content="https://seyyedatyabi.github.io/quranic-faculty-tehran/og-image.jpg">
     <meta name="keywords" content="دانشکده علوم قرآنی تهران, بسیج دانشجویی علوم قرآنی, دانشگاه علوم و معارف قرآن کریم, ثبت نام بسیج دانشکده, اساتید علوم قرآنی تهران">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="mobile-menu.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script>
         tailwind.config = {
@@ -38,6 +48,108 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+/* Navigation drawer — inline version for all screen sizes */
+.mobile-menu-toggle {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(45, 128, 126, .65);
+    border-radius: 12px;
+    background: rgba(20, 93, 95, .35);
+    color: #fbbf24;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease;
+}
+.mobile-menu-toggle:hover {
+    background: rgba(20, 93, 95, .7);
+    border-color: #fbbf24;
+}
+.mobile-menu-overlay[hidden] { display: none !important; }
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: rgba(0, 0, 0, .62);
+    opacity: 0;
+    transition: opacity .28s ease;
+    backdrop-filter: blur(3px);
+}
+.mobile-menu-overlay.is-visible { opacity: 1; }
+.mobile-menu-drawer {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    width: min(86vw, 360px);
+    height: 100vh;
+    height: 100dvh;
+    padding: 22px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at 100% 0%, rgba(20, 93, 95, .42), transparent 42%), #071f20;
+    border-left: 1px solid rgba(45, 128, 126, .55);
+    box-shadow: -18px 0 55px rgba(0, 0, 0, .35);
+    transform: translateX(105%);
+    visibility: hidden;
+    transition: transform .3s cubic-bezier(.2,.75,.25,1), visibility .3s;
+    overflow-y: auto;
+}
+.mobile-menu-drawer.is-open {
+    transform: translateX(0);
+    visibility: visible;
+}
+.mobile-menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(45, 128, 126, .35);
+}
+.mobile-menu-brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+.mobile-menu-brand-icon {
+    width: 43px; height: 43px; flex: 0 0 43px;
+    display: grid; place-items: center;
+    border-radius: 13px; background: rgba(20, 93, 95, .45);
+    color: #fbbf24; font-size: 23px;
+}
+.mobile-menu-brand strong { display: block; color: #fff; font-size: 14px; line-height: 1.7; }
+.mobile-menu-brand small { display: block; margin-top: 2px; color: #9bd4cf; font-size: 11px; }
+.mobile-menu-close {
+    width: 39px; height: 39px; flex: 0 0 39px;
+    display: grid; place-items: center;
+    border: 1px solid rgba(45, 128, 126, .5); border-radius: 11px;
+    background: rgba(20, 93, 95, .28); color: #d8eeee;
+    font-size: 22px; cursor: pointer;
+}
+.mobile-menu-caption { margin: 23px 4px 12px; color: #83bdb8; font-size: 12px; }
+.mobile-menu-links { display: flex; flex-direction: column; gap: 7px; }
+.mobile-menu-links a {
+    min-height: 51px; display: flex; align-items: center; gap: 12px;
+    padding: 0 13px; border: 1px solid transparent; border-radius: 13px;
+    color: #e2eeee; text-decoration: none; font-size: 14px;
+    transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.mobile-menu-links a > i:first-child { width: 23px; color: #fbbf24; font-size: 20px; text-align: center; }
+.mobile-menu-links a:hover, .mobile-menu-links a:focus-visible {
+    outline: none; background: rgba(20, 93, 95, .35);
+    border-color: rgba(45, 128, 126, .55); color: #fff;
+}
+.mobile-menu-arrow { margin-right: auto; color: #6fa9a4; font-size: 15px; }
+.mobile-menu-footer {
+    display: flex; flex-direction: column; gap: 5px; margin-top: auto;
+    padding: 18px 4px 2px; color: #6faaa5; font-size: 10px;
+    border-top: 1px solid rgba(45, 128, 126, .25);
+}
+body.mobile-menu-open { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) {
+    .mobile-menu-overlay, .mobile-menu-drawer, .mobile-menu-toggle, .mobile-menu-links a { transition: none; }
+}
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
@@ -53,14 +165,7 @@
                         <p class="text-xs md:text-sm text-teal-200 mt-1">تاسیس ۱۳۶۸ | دانشگاه علوم و معارف قرآن کریم</p>
                     </div>
                 </div>
-                <nav class="hidden lg:flex items-center gap-8">
-                    <a href="#hero" class="text-sm font-medium hover:text-brand-accent transition-colors">صفحه نخست</a>
-                    <a href="#gallery" class="text-sm font-medium hover:text-brand-accent transition-colors">عکس‌های دانشکده</a>
-                    <a href="#offices" class="text-sm font-medium hover:text-brand-accent transition-colors">بخش‌ها و اتاق‌ها</a>
-                    <a href="#faculty" class="text-sm font-medium hover:text-brand-accent transition-colors">اعضای هیئت علمی</a>
-                    <a href="#basij" class="text-sm font-medium hover:text-brand-accent transition-colors">ثبت‌نام بسیج</a>
-                </nav>
-                <button id="mobile-menu-open" class="mobile-menu-toggle" type="button" aria-label="باز کردن منو" aria-controls="mobile-menu" aria-expanded="false">
+                <button id="mobile-menu-open" class="mobile-menu-toggle" type="button" aria-label="باز کردن منوی اصلی" aria-controls="mobile-menu" aria-expanded="false">
                     <i class="ph ph-list" aria-hidden="true"></i>
                 </button>
             </div>
@@ -375,11 +480,11 @@
                     <form id="basij-form" onsubmit="submitBasijForm(event)">
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
                             <div>
-                                <label class="block text-sm font-bold text-teal-100 mb-2">نام و نام خانوادگی *</label>
+                                <label for="reg-name" class="block text-sm font-bold text-teal-100 mb-2">نام و نام خانوادگی *</label>
                                 <input type="text" id="reg-name" required placeholder="مثال: علی احمدی" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent">
                             </div>
                             <div>
-                                <label class="block text-sm font-bold text-teal-100 mb-2">جنسیت متقاضی *</label>
+                                <label for="reg-gender" class="block text-sm font-bold text-teal-100 mb-2">جنسیت متقاضی *</label>
                                 <select id="reg-gender" required class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent appearance-none">
                                     <option value="" disabled selected>انتخاب کنید...</option>
                                     <option value="male">برادران (آقایان)</option>
@@ -387,7 +492,7 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-bold text-teal-100 mb-2">مقطع و سال ورود *</label>
+                                <label for="reg-degree" class="block text-sm font-bold text-teal-100 mb-2">مقطع و سال ورود *</label>
                                 <select id="reg-degree" required class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent appearance-none">
                                     <option value="" disabled selected>انتخاب کنید...</option>
                                     <option value="bs1402">کارشناسی علوم قرآن و حدیث (ورودی ۱۴۰۲)</option>
@@ -400,20 +505,20 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-bold text-teal-100 mb-2">شماره دانشجویی *</label>
-                                <input type="number" id="reg-student-id" required placeholder="مثال: ۴۰۲۰۱۲۳۴۵۶" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent">
+                                <label for="reg-student-id" class="block text-sm font-bold text-teal-100 mb-2">شماره دانشجویی *</label>
+                                <input type="text" id="reg-student-id" inputmode="numeric" autocomplete="off" required placeholder="مثال: ۴۰۲۰۱۲۳۴۵۶" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent">
                             </div>
                             <div>
-                                <label class="block text-sm font-bold text-teal-100 mb-2">کد ملی *</label>
+                                <label for="reg-national-id" class="block text-sm font-bold text-teal-100 mb-2">کد ملی *</label>
                                 <input type="number" id="reg-national-id" required placeholder="مثال: ۰۰۱۲۳۴۵۶۷۸" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent">
                             </div>
                             <div>
-                                <label class="block text-sm font-bold text-teal-100 mb-2">شماره همراه فعال در ایتا *</label>
-                                <input type="tel" id="reg-phone" required placeholder="۰۹۱۲۳۴۵۶۷۸۹" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent text-left" dir="ltr">
+                                <label for="reg-phone" class="block text-sm font-bold text-teal-100 mb-2">شماره همراه فعال در ایتا *</label>
+                                <input type="tel" id="reg-phone" inputmode="tel" autocomplete="tel" pattern="[0-9۰-۹]{11}" title="شماره همراه را به‌صورت ۱۱ رقم وارد کنید؛ مانند ۰۹۱۲۳۴۵۶۷۸۹" required placeholder="۰۹۱۲۳۴۵۶۷۸۹" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent text-left" dir="ltr">
                             </div>
                         </div>
                         <div class="mb-6 border border-brand-light rounded-xl p-5 bg-brand-base/50">
-                            <label class="block text-sm font-bold text-teal-100 mb-4">زمینه‌های علاقه‌مندی به فعالیت در پایگاه:</label>
+                            <span class="block text-sm font-bold text-teal-100 mb-4">زمینه‌های علاقه‌مندی به فعالیت در پایگاه:</span>
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 <label class="flex items-center gap-2 cursor-pointer group"><input type="checkbox" value="قرآنی" class="reg-interests w-4 h-4 rounded bg-brand-base border-brand-light text-brand-accent focus:ring-brand-accent"><span class="text-sm text-teal-200 group-hover:text-white">قرآنی، تلاوت و حفظ</span></label>
                                 <label class="flex items-center gap-2 cursor-pointer group"><input type="checkbox" value="علمی" class="reg-interests w-4 h-4 rounded bg-brand-base border-brand-light text-brand-accent focus:ring-brand-accent"><span class="text-sm text-teal-200 group-hover:text-white">علمی و پژوهشی</span></label>
@@ -424,9 +529,10 @@
                             </div>
                         </div>
                         <div class="mb-8">
-                            <label class="block text-sm font-bold text-teal-100 mb-2">توضیحات، سوابق یا مهارت‌های خاص (اختیاری):</label>
+                            <label for="reg-desc" class="block text-sm font-bold text-teal-100 mb-2">توضیحات، سوابق یا مهارت‌های خاص (اختیاری):</label>
                             <textarea id="reg-desc" rows="3" class="w-full bg-brand-base border border-brand-light rounded-xl px-4 py-3 text-white placeholder-teal-600 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent" placeholder="توضیحات، مهارت‌ها یا سوابق..."></textarea>
                         </div>
+                        <p id="basij-form-status" class="mb-5 text-sm leading-7 text-teal-100" role="status" aria-live="polite" aria-atomic="true"></p>
                         <button type="submit" class="w-full bg-brand-accent hover:bg-yellow-400 text-slate-900 font-bold text-lg py-4 rounded-xl shadow-lg transition-colors flex justify-center items-center gap-2">
                             <i class="ph-bold ph-paper-plane-right"></i>
                             تایید و ارسال مشخصات به مسئول منابع انسانی پایگاه
@@ -739,8 +845,12 @@
         function submitBasijForm(e) {
             e.preventDefault();
 
+            const form = document.getElementById('basij-form');
+            const status = document.getElementById('basij-form-status');
             const eitaaAdminAgha = "seyedatyabi";
             const eitaaAdminKhanom = "seyedatyabi";
+
+            if (!form.reportValidity()) return;
 
             const name = document.getElementById('reg-name').value.trim();
             const gender = document.getElementById('reg-gender').value;
@@ -760,27 +870,76 @@
 
             const targetEitaaId = gender === 'male' ? eitaaAdminAgha : eitaaAdminKhanom;
             const targetUrl = `https://eitaa.com/${targetEitaaId}`;
-
-            // Open Eitaa directly during the submit click to reduce popup-blocking.
             const eitaaWindow = window.open(targetUrl, '_blank');
+            if (eitaaWindow) eitaaWindow.opener = null;
 
-            const showCopyNotice = () => {
-                alert('گفت‌وگوی ایتا باز شد. مشخصات ثبت‌نام کپی شده است؛ آن را در گفت‌وگوی ایتا جای‌گذاری (Paste) و ارسال کنید.');
-            };
+            status.textContent = 'در حال آماده‌سازی پیام ثبت‌نام...';
 
             if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(message).then(showCopyNotice).catch(() => {
-                    alert('گفت‌وگوی ایتا باز شد. لطفاً مشخصات فرم را در پیام ایتا وارد و ارسال کنید.');
+                navigator.clipboard.writeText(message).then(() => {
+                    status.textContent = 'پیام ثبت‌نام کپی شد. گفت‌وگوی ایتا را باز کنید، پیام را جای‌گذاری (Paste) و پس از بررسی، خودتان ارسال کنید.';
+                }).catch(() => {
+                    status.textContent = 'کپی خودکار انجام نشد. گفت‌وگوی ایتا را باز کنید و اطلاعات فرم را به‌صورت دستی وارد کنید.';
                 });
             } else {
-                alert('گفت‌وگوی ایتا باز شد. لطفاً مشخصات فرم را در پیام ایتا وارد و ارسال کنید.');
+                status.textContent = 'امکان کپی خودکار در این مرورگر فراهم نیست. گفت‌وگوی ایتا را باز کنید و اطلاعات فرم را به‌صورت دستی وارد کنید.';
             }
 
             if (!eitaaWindow) {
-                alert('مرورگر اجازه باز کردن خودکار ایتا را نداد. لطفاً پنجره بازشو را مجاز کنید یا این نشانی را باز کنید: ' + targetUrl);
+                status.textContent += ' اگر ایتا باز نشد، پنجره‌های بازشو را برای این سایت مجاز کنید و نشانی ایتا را جداگانه باز کنید: ' + targetUrl;
             }
         }
     </script>
-    <script src="mobile-menu.js"></script>
+    <script>
+/* Shared navigation drawer for desktop and mobile */
+(() => {
+    const openButton = document.getElementById('mobile-menu-open');
+    const closeButton = document.getElementById('mobile-menu-close');
+    const drawer = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    if (!openButton || !closeButton || !drawer || !overlay) return;
+
+    let previouslyFocusedElement = null;
+    let closeTimer = null;
+
+    function openMenu() {
+        if (drawer.classList.contains('is-open')) return;
+        previouslyFocusedElement = document.activeElement;
+        if (closeTimer) window.clearTimeout(closeTimer);
+        overlay.hidden = false;
+        requestAnimationFrame(() => overlay.classList.add('is-visible'));
+        drawer.classList.add('is-open');
+        drawer.setAttribute('aria-hidden', 'false');
+        drawer.removeAttribute('inert');
+        openButton.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('mobile-menu-open');
+        closeButton.focus();
+    }
+
+    function closeMenu() {
+        if (!drawer.classList.contains('is-open')) return;
+        drawer.classList.remove('is-open');
+        overlay.classList.remove('is-visible');
+        drawer.setAttribute('aria-hidden', 'true');
+        drawer.setAttribute('inert', '');
+        openButton.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('mobile-menu-open');
+        closeTimer = window.setTimeout(() => {
+            if (!drawer.classList.contains('is-open')) overlay.hidden = true;
+        }, 300);
+        const focusTarget = previouslyFocusedElement && previouslyFocusedElement.isConnected
+            ? previouslyFocusedElement : openButton;
+        if (focusTarget && typeof focusTarget.focus === 'function') focusTarget.focus();
+    }
+
+    openButton.addEventListener('click', openMenu);
+    closeButton.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    drawer.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && drawer.classList.contains('is-open')) closeMenu();
+    });
+})();
+    </script>
 </body>
 </html>
